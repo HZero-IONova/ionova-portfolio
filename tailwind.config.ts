@@ -31,6 +31,7 @@ const config: Config = {
         accent: "#127bcb",
         magenta: "#e91e63",
         dark: "#1e3d58",
+        card: "#EAF4FB",
       },
     },
   },
