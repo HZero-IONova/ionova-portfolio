@@ -1,4 +1,4 @@
-import memojiImage from "@/assets/images/memoji-computer.png";
+import memojiImage from "@/assets/images/memoji-nene.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
@@ -58,7 +58,7 @@ export const HeroSection = () => {
             className="size-[100px]"
             alt="Person peeking from behind laptop"
           />
-          <div className="bg-dark/10 border border-dark/20 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
+          <div className="bg-light/30 border border-dark/20 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full"></div>
             <div className="text-sm font-medium">
               Available for new Projects
@@ -69,18 +69,18 @@ export const HeroSection = () => {
           <h1 className="font-secondary text-3xl md:text-5xl text-center mt-8 tracking-wide">
             Building Exceptional User Experiences
           </h1>
-          <p className="mt-4 text-center text-dark/60 md:text-lg">
+          <p className="mt-4 text-center text-light/60 md:text-lg">
             We specialize in transforming designs into functional,
             high-performing web applications. Let's discuss your next project.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-dark/15 px-6 h-12 rounded-xl">
+          <button className="inline-flex items-center gap-2 border border-light/15 px-6 h-12 rounded-xl">
             <span className="font-semibold">Explore Our Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 border-dark bg-dark text-light h-12 px-6 rounded-xl">
-            <span className="text-lg">👋🏼</span>
+          <button className="inline-flex items-center gap-2 border-dark bg-magenta text-dark h-12 px-6 rounded-xl">
+            <span className="text-lg">👋</span>
             <span className="text-semibold">Let's Connect</span>
           </button>
         </div>

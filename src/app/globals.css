@@ -4,11 +4,11 @@
 
 @layer base {
   .nav-item {
-    @apply px-4 py-1.5 rounded-full text-dark/70 text-sm font-semibold hover:bg-dark/10 hover:text-dark transition duration-300;
+    @apply px-4 py-1.5 rounded-full text-light/70 text-sm font-semibold hover:bg-light/10 hover:text-light transition duration-300;
   }
 
   .hero-ring {
-    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-blue-800/5 shadow-[0_0_80px_inset] shadow-blue-800/5;
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-magenta/5 shadow-[0_0_80px_inset] shadow-magenta/5;
   }
 }
 
