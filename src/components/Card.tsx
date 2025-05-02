@@ -1,11 +1,12 @@
 import grainImage from "@/assets/images/grain.jpg";
 import { twMerge } from "tailwind-merge";
-import { PropsWithChildren } from "react";
+import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 export const Card = ({
   className,
   children,
-}: PropsWithChildren<{ className?: string }>) => {
+  ...other
+}: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={twMerge(
@@ -18,6 +19,7 @@ export const Card = ({
           "after:outline-light/20 after:z-10 after:pointer-events-none",
         className
       )}
+      {...other}
     >
       {/* Grain texture */}
       <div

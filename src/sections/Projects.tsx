@@ -20,6 +20,30 @@ const portfolioProjects = [
     link: "https://harce-portfolio.vercel.app",
     image: harcePortfolio,
   },
+  {
+    company: "Hiram Arce",
+    year: "2025",
+    title: "Web Portfolio",
+    results: [
+      { title: "Enhanced user experience by 40%" },
+      { title: "Improved site speed by 50%" },
+      { title: "Increased mobile traffic by 35%" },
+    ],
+    link: "https://harce-portfolio.vercel.app",
+    image: harcePortfolio,
+  },
+  {
+    company: "Hiram Arce",
+    year: "2025",
+    title: "Web Portfolio",
+    results: [
+      { title: "Enhanced user experience by 40%" },
+      { title: "Improved site speed by 50%" },
+      { title: "Increased mobile traffic by 35%" },
+    ],
+    link: "https://harce-portfolio.vercel.app",
+    image: harcePortfolio,
+  },
 ];
 
 export const ProjectsSection = () => {
@@ -33,10 +57,11 @@ export const ProjectsSection = () => {
         />
 
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{ top: `calc(64px + ${projectIndex * 40}px` }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 {/* Project Info */}
