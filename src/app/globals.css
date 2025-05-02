@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 @layer base {
+  /* Nav items con mejor contraste, padding uniforme y foco accesible */
+  .nav-item {
+    @apply px-4 py-2 rounded-full text-light/80 text-sm font-semibold 
+           transition-colors duration-300 ease-in-out 
+           hover:bg-light/20 hover:text-light 
+           focus:outline-none focus:ring-2 focus:ring-magenta focus:ring-offset-2;
+  }
+
+  /* Hero ring con tamaño fijo, sombra menos agresiva y borde más sutil */
+  .hero-ring {
+    @apply absolute top-1/2 left-1/2 
+           w-64 h-64 /* tamaño explícito para controlar el grosor */
+           -translate-x-1/2 -translate-y-1/2 
+           rounded-full border-2 border-magenta/10 /* más suave */ 
+           shadow-[inset_0_0_60px] shadow-magenta/10;
+  }
+}
+
+@layer utilities {
+  /* Container centrado, con padding responsivo */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-0 lg:max-w-5xl;
+  }
+}
+
+/* 
+@layer base {
   .nav-item {
     @apply px-4 py-1.5 rounded-full text-light/70 text-sm font-semibold hover:bg-light/10 hover:text-light transition duration-300;
   }
@@ -16,9 +43,9 @@
   .container {
     @apply lg:max-w-5xl;
   }
-}
+} 
 
-/* @layer base {
+@layer base {
     body {
     @apply bg-light text-dark leading-loose antialiased font-primary;
     } 

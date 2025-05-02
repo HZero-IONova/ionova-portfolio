@@ -1,7 +1,16 @@
+// components/Header.jsx
+import { twMerge } from "tailwind-merge";
+
 export const Header = () => {
   return (
     <div className="flex justify-center items-center fixed top-3 w-full z-10">
-      <nav className="flex gap-1 p-0.5 border border-light/15 rounded-full bg-light/10 backdrop-blur">
+      <nav
+        className={twMerge(
+          "flex gap-1 p-0.5 rounded-full backdrop-blur",
+          // borde suave en texto muted, fondo semi-transparente oscuro
+          "border border-textMuted bg-light/10"
+        )}
+      >
         <a href="#" className="nav-item">
           Home
         </a>
@@ -13,7 +22,7 @@ export const Header = () => {
         </a>
         <a
           href="#"
-          className="nav-item bg-light text-dark hover:bg-light/70 hover:text-dark"
+          className="nav-item bg-dark text-light hover:bg-light/70 hover:text-dark"
         >
           Contact
         </a>
