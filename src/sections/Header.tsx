@@ -11,17 +11,17 @@ export const Header = () => {
           "border border-textMuted bg-light/10"
         )}
       >
-        <a href="#" className="nav-item">
+        <a href="#home" className="nav-item">
           Home
         </a>
-        <a href="#" className="nav-item">
+        <a href="#projects" className="nav-item">
           Projects
         </a>
-        <a href="#" className="nav-item">
+        <a href="#about" className="nav-item">
           About
         </a>
         <a
-          href="#"
+          href="#contact"
           className="nav-item bg-light text-dark hover:bg-light/70 hover:text-dark"
         >
           Contact

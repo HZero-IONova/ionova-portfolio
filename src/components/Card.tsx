@@ -1,6 +1,7 @@
 import grainImage from "@/assets/images/grain.jpg";
 import { twMerge } from "tailwind-merge";
 import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+import { motion } from "motion/react";
 
 export const Card = ({
   className,

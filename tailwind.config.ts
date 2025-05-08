@@ -29,7 +29,7 @@ const config: Config = {
       colors: {
         dark: "#0B1520", // Fondo global, casi negro azulado
         primary: "#0B1520", // Igual que dark para consistencia
-        orbitSurface: "#0C162A", // Paneles y cards: violeta muy oscuro
+        orbitSurface: "#2b2b3e", // Paneles y cards: violeta muy oscuro
         tesla: "#32225F", // Secciones alternas: púrpura profundo
         accent: "#8EE4AF", // Menta: botones primarios, enlaces destacados
         magenta: "#FFC857", // Dorado/naranja: CTAs secundarios, badges

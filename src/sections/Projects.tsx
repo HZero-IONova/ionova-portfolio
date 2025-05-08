@@ -1,3 +1,4 @@
+"use client";
 // components/ProjectsSection.jsx
 import harcePortfolio from "@/assets/images/Harce_Portfolio.png";
 import Image from "next/image";
@@ -6,6 +7,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import { motion } from "motion/react";
 
 const portfolioProjects = [
   {
@@ -48,14 +50,19 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24 bg-deepSpace text-lunarWhite">
+    <motion.section
+      id="projects"
+      className="pb-16 lg:py-24 bg-deepSpace text-lunarWhite"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-0 lg:max-w-5xl">
         <SectionHeader
           eyebrow="Real-World Results"
           title="Featured Projects"
           description="See how we transformed concepts into engaging digital experiences."
         />
-
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
           {portfolioProjects.map((project, projectIndex) => (
             <Card
@@ -66,16 +73,31 @@ export const ProjectsSection = () => {
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 {/* Project Info */}
                 <div className="lg:pb-16">
-                  <div className="inline-flex gap-2 font-poppins font-bold uppercase tracking-widest text-sm bg-gradient-to-r from-accent to-magenta text-transparent bg-clip-text">
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="inline-flex gap-2 font-poppins font-bold uppercase tracking-widest text-sm bg-gradient-to-r from-accent to-magenta text-transparent bg-clip-text"
+                  >
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
-                  </div>
-                  <h3 className="font-secondary text-light text-2xl mt-2 md:mt-5 md:text-4xl">
+                  </motion.div>
+                  <motion.h3
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="font-secondary text-light text-2xl mt-2 md:mt-5 md:text-4xl"
+                  >
                     {project.title}
-                  </h3>
+                  </motion.h3>
                   <hr className="border-t-2 border-light/20 mt-4 md:mt-5" />
-                  <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+                  <motion.ul
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    className="flex flex-col gap-4 mt-4 md:mt-5"
+                  >
                     {project.results.map((result) => (
                       <li
                         key={result.title}
@@ -85,33 +107,43 @@ export const ProjectsSection = () => {
                         <span className="font-poppins">{result.title}</span>
                       </li>
                     ))}
-                  </ul>
+                  </motion.ul>
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="mt-8 inline-flex items-center justify-center gap-2 bg-accent text-primary h-12 px-6 rounded-xl font-semibold font-poppins transition-colors duration-200 hover:bg-accent/90">
+                    <motion.button
+                      initial={{ y: 30, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 1 }}
+                      className="mt-8 inline-flex items-center justify-center gap-2 bg-accent text-primary h-12 px-6 rounded-xl font-semibold font-poppins transition-colors duration-200 hover:bg-accent/90"
+                    >
                       <span>Visit Live Site</span>
                       <ArrowUpRightIcon className="size-4 text-primary" />
-                    </button>
+                    </motion.button>
                   </a>
                 </div>
 
                 {/* Project Image */}
-                <div className="relative">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="relative"
+                >
                   <Image
                     src={project.image}
                     alt={project.title}
                     className="mt-8 -mb-4 border border-tesla/20 rounded-md md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   />
-                </div>
+                </motion.div>
               </div>
             </Card>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

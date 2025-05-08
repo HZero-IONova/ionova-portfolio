@@ -1,3 +1,5 @@
+"use client";
+
 import memojiImage from "@/assets/images/memoji-nene.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
@@ -5,10 +7,14 @@ import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
+import { motion } from "motion/react";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip bg-deepSpace text-light">
+    <div
+      id="home"
+      className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip bg-deepSpace text-light"
+    >
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
@@ -104,12 +110,18 @@ export const HeroSection = () => {
       </div>
 
       <div className="container">
-        <div className="flex flex-col items-center">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+          className="flex flex-col items-center"
+        >
           <Image
             src={memojiImage}
             className="size-[100px]"
             alt="Person peeking from behind laptop"
           />
+
           <div className="bg-orbitSurface border border-light/20 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
@@ -118,32 +130,51 @@ export const HeroSection = () => {
               Available for new Projects
             </div>
           </div>
-        </div>
-
+        </motion.div>
         <div className="max-w-lg mx-auto">
-          <h1 className="font-secondary text-3xl md:text-5xl text-center mt-8 tracking-wide text-light">
+          <motion.h1
+            initial={{ y: -30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="font-secondary text-3xl md:text-5xl text-center mt-8 tracking-wide text-light"
+          >
             Building Exceptional User Experiences
-          </h1>
-          <p className="mt-4 text-center text-light/70 md:text-lg">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-4 text-center text-light/70 md:text-lg"
+          >
             We specialize in transforming designs into functional,
             high-performing web applications. Let’s discuss your next project.
-          </p>
+          </motion.p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           {/* Ghost button */}
-          <button className="inline-flex items-center gap-2 border border-tesla px-6 h-12 rounded-xl transition-colors duration-200 hover:bg-orbitSurface">
+          <motion.button
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="inline-flex items-center gap-2 border border-tesla px-6 h-12 rounded-xl transition-colors duration-200 hover:bg-orbitSurface"
+          >
             <span className="font-poppins font-semibold text-light">
               Explore Our Work
             </span>
             <ArrowDown className="size-4" />
-          </button>
+          </motion.button>
 
           {/* Primary CTA */}
-          <button className="inline-flex items-center gap-2 bg-light text-dark h-12 px-6 rounded-xl transition-colors duration-200 hover:bg-[#C2185B]">
+          <motion.button
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="inline-flex items-center gap-2 bg-light text-dark h-12 px-6 rounded-xl transition-colors duration-200 hover:bg-[#C2185B]"
+          >
             <span className="text-lg">👋</span>
             <span className="font-poppins font-semibold">Let’s Connect</span>
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
