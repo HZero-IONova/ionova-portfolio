@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolBoxItems } from "@/components/ToolBoxItems";
-import bookImage from "@/assets/images/book-cover.png";
+import brainNetwork from "@/assets/images/HumanCode.png";
 import Image from "next/image";
 import mapImage from "@/assets/images/Map-nene.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
@@ -61,21 +61,27 @@ export const AboutSection = () => {
 
         <div className="mt-20 flex flex-col gap-8">
           {/* Reads & Toolbox */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 0.7, duration: 0.4, ease: "easeIn" },
+            }}
+            className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3"
+          >
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
-                title="My Reads"
-                description="Explore the Books shaping my perspectives."
+                title="Human + Code"
+                description="Human insight, Technical Precision -- Behind great code, there’s always a greater mind."
               />
               <div className="w-40 mx-auto mt-3 md:mt-0">
-                <Image src={bookImage} alt="Book cover" />
+                <Image src={brainNetwork} alt="Book cover" />
               </div>
             </Card>
-
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="My Toolbox"
-                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                title="Our Tech Stack"
+                description="Discover the trusted technologies and tools we use to build reliable, scalable, and results-driven digital experiences."
               />
               <ToolBoxItems
                 items={toolboxItems}
@@ -88,14 +94,21 @@ export const AboutSection = () => {
                 itemsWrapperClassName="animate-move-right [animation-duration:30s]"
               />
             </Card>
-          </div>
+          </motion.div>
 
           {/* Hobbies & Map */}
-          <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 0.9, duration: 0.4, ease: "easeIn" },
+            }}
+            className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8"
+          >
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="Beyond the Code"
-                description="Explore our Interests and hobbies beyond the digital realm."
+                title="Off the Grid"
+                description="Passions and pursuits that inspire creative thinking and reflect who We are beyond the professional sphere."
                 className="px-6 py-6"
               />
               <div className="relative flex-1" ref={constraintRef}>
@@ -132,7 +145,7 @@ export const AboutSection = () => {
                 />
               </div>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

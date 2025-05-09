@@ -22,30 +22,6 @@ const portfolioProjects = [
     link: "https://harce-portfolio.vercel.app",
     image: harcePortfolio,
   },
-  {
-    company: "Hiram Arce",
-    year: "2025",
-    title: "Web Portfolio",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://harce-portfolio.vercel.app",
-    image: harcePortfolio,
-  },
-  {
-    company: "Hiram Arce",
-    year: "2025",
-    title: "Web Portfolio",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://harce-portfolio.vercel.app",
-    image: harcePortfolio,
-  },
 ];
 
 export const ProjectsSection = () => {

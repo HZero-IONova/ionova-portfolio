@@ -16,7 +16,7 @@ export const CardHeader = ({
         <StarIcon className="size-9 text-magenta" />
         <h3 className="font-secondary text-3xl text-light">{title}</h3>
       </div>
-      <p className="text-sm lg:text-base max-w-xs text-textMuted">
+      <p className="text-sm lg:text-base max-w-xs mt-2 text-textMuted">
         {description}
       </p>
     </div>

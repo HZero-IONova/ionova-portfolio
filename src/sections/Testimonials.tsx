@@ -18,25 +18,13 @@ const testimonials = [
     avatar: memojiSmile,
   },
   {
-    name: "Hiram Arce",
+    name: "Ramon Gonzalez",
     position: "Software Engineer @ IONova",
     text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
     avatar: memojiSmile,
   },
   {
-    name: "Hiram Arce",
-    position: "Software Engineer @ IONova",
-    text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiSmile,
-  },
-  {
-    name: "Hiram Arce",
-    position: "Software Engineer @ IONova",
-    text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiSmile,
-  },
-  {
-    name: "Hiram Arce",
+    name: "Nene Arce",
     position: "Software Engineer @ IONova",
     text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
     avatar: memojiSmile,
