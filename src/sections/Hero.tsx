@@ -11,6 +11,8 @@ import { motion } from "motion/react";
 import Button from "@/components/Button";
 import ButtonDark from "@/components/ButtonDark";
 
+import { fadeIn } from "@/components/variants";
+
 export const HeroSection = () => {
   return (
     <div
@@ -136,17 +138,19 @@ export const HeroSection = () => {
         </motion.div>
         <div className="max-w-lg mx-auto">
           <motion.h1
-            initial={{ y: -30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.8 }}
             className="font-secondary text-3xl md:text-5xl text-center mt-8 tracking-wide text-light"
           >
             Building Exceptional User Experiences
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.8 }}
             className="mt-4 text-center text-light/70 md:text-lg"
           >
             We specialize in transforming designs into functional,
@@ -154,12 +158,18 @@ export const HeroSection = () => {
           </motion.p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.8 }}
+          className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4"
+        >
           {/* Ghost button */}
           <ButtonDark targetId="#projects" text="Explore our work" />
           {/* Primary CTA */}
           <Button targetId="#contact" text="Let's Connect" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

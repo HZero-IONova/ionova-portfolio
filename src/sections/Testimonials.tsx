@@ -10,6 +10,8 @@ import { Fragment } from "react";
 import { motion } from "motion/react";
 Fragment;
 
+import { fadeIn } from "@/components/variants";
+
 const testimonials = [
   {
     name: "Hiram Arce",

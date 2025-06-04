@@ -24,6 +24,8 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
+import { fadeIn } from "@/components/variants";
+
 const toolboxItems = [
   { title: "Javascript", iconType: FaJs },
   { title: "React.js", iconType: FaReact },
@@ -62,11 +64,10 @@ export const AboutSection = () => {
         <div className="mt-20 flex flex-col gap-8">
           {/* Reads & Toolbox */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { delay: 0.7, duration: 0.4, ease: "easeIn" },
-            }}
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
             className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3"
           >
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
@@ -98,11 +99,10 @@ export const AboutSection = () => {
 
           {/* Hobbies & Map */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { delay: 0.9, duration: 0.4, ease: "easeIn" },
-            }}
+            variants={fadeIn("left", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
             className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8"
           >
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
