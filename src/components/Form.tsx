@@ -41,7 +41,7 @@ export const Form = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.5 }}
-      className="w-full max-w-xl bg-dark text-light rounded-3xl px-6 py-8 sm:px-8 md:px-10 lg:py-10 relative overflow-hidden z-0 shadow-2xl border border-gray-800"
+      className="w-full max-w-2xl bg-dark text-light rounded-3xl px-4 py-8 sm:px-6 md:px-10 lg:py-10 mx-auto relative overflow-hidden z-0 shadow-2xl border border-gray-800"
     >
       {/* Background grain */}
       <div
@@ -50,7 +50,7 @@ export const Form = () => {
       />
 
       {/* Fields */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Full Name */}
         <div className="flex flex-col">
           <label htmlFor="fullName" className="text-sm mb-2 text-gray-300">
@@ -86,7 +86,7 @@ export const Form = () => {
         </div>
 
         {/* Service */}
-        <div className="flex flex-col sm:col-span-2">
+        <div className="flex flex-col">
           <label htmlFor="service" className="text-sm mb-2 text-gray-300">
             Service
           </label>
@@ -109,7 +109,7 @@ export const Form = () => {
         </div>
 
         {/* Message */}
-        <div className="flex flex-col sm:col-span-2">
+        <div className="flex flex-col">
           <label htmlFor="message" className="text-sm mb-2 text-gray-300">
             Enter your Message
           </label>
@@ -127,14 +127,15 @@ export const Form = () => {
       </div>
 
       {/* Submit */}
-      <div className="w-full flex justify-center mt-6">
+      <div className="w-full flex flex-col items-center mt-6 space-y-2 md:space-y-4">
         <ButtonForm
-          text={submitted ? "Thanks!" : "Send Message"}
+          text={submitted ? "Done Deal!" : "Send Message"}
           disabled={submitted}
+          success={submitted} // ← activa el ícono de check
         />
         {submitted && (
-          <p className="mt-3 text-green-400 text-sm">
-            Your message has been sent.
+          <p className="text-green-400 text-sm text-center animate-fadeIn">
+            We will contact you soon.
           </p>
         )}
       </div>

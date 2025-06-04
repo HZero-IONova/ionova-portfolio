@@ -1,13 +1,17 @@
-"use client";
-import { RiArrowRightUpLine } from "react-icons/ri";
+import { RiArrowRightUpLine, RiCheckLine } from "react-icons/ri"; // ← agrega RiCheckLine
 import React from "react";
 
 interface ButtonFormProps {
   text: string;
   disabled?: boolean;
+  success?: boolean; // ← nuevo prop
 }
 
-const ButtonForm: React.FC<ButtonFormProps> = ({ text, disabled = false }) => {
+const ButtonForm: React.FC<ButtonFormProps> = ({
+  text,
+  disabled = false,
+  success = false,
+}) => {
   return (
     <button
       type="submit"
@@ -19,12 +23,20 @@ const ButtonForm: React.FC<ButtonFormProps> = ({ text, disabled = false }) => {
       <div className="flex-1 text-center tracking-[1.2px] font-primary font-bold text-primary text-sm uppercase transition-all duration-300">
         {text}
       </div>
-      <div className="w-11 h-11 bg-primary flex items-center justify-center rounded-xl transition-all duration-300">
-        <RiArrowRightUpLine
-          className={`text-white text-xl transition-all duration-200 ${
-            disabled ? "" : "group-hover:rotate-45"
-          }`}
-        />
+      <div
+        className={`w-11 h-11 bg-primary flex items-center justify-center rounded-xl transition-all duration-300 ${
+          success ? "bg-green-500" : ""
+        }`}
+      >
+        {success ? (
+          <RiCheckLine className="text-white text-xl" />
+        ) : (
+          <RiArrowRightUpLine
+            className={`text-white text-xl transition-all duration-200 ${
+              disabled ? "" : "group-hover:rotate-45"
+            }`}
+          />
+        )}
       </div>
     </button>
   );

@@ -40,8 +40,13 @@ const config: Config = {
         "ping-large": "ping-large 1s ease-in-out infinite",
         "move-left": "move-left 1s linear infinite",
         "move-right": "move-right 1s linear infinite",
+        fadeIn: "fadeIn 0.5s ease-out",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         "ping-large": {
           "75%, 100%": {
             transform: "scale(3)",
