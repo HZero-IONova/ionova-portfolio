@@ -31,10 +31,12 @@ export const ContactSection = () => {
               </p>
             </div>
             <div>
-              <button className="text-light bg-dark/90 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
-                <span className="font-semibold text-light">Contact Me</span>
-                <ArrowUprightIcon className="size-4" />
-              </button>
+              <a href="#projects">
+                <button className="text-light bg-dark/90 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
+                  <span className="font-semibold text-light">Contact Me</span>
+                  <ArrowUprightIcon className="size-4" />
+                </button>
+              </a>
             </div>
           </div>
         </div>

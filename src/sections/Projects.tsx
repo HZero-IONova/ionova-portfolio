@@ -1,10 +1,10 @@
 "use client";
 // components/ProjectsSection.jsx
 import harcePortfolio from "@/assets/images/Harce_Portfolio.png";
+import urbanBuild from "@/assets/images/UrbanBuild.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { motion } from "motion/react";
@@ -21,6 +21,18 @@ const portfolioProjects = [
     ],
     link: "https://harce-portfolio.vercel.app",
     image: harcePortfolio,
+  },
+  {
+    company: "UrbamBuild",
+    year: "2025",
+    title: "Landing Page",
+    results: [
+      { title: "Enhanced user experience by 50%" },
+      { title: "Improved site speed by 80%" },
+      { title: "Increased mobile traffic by 55%" },
+    ],
+    link: "https://construction-template-mu.vercel.app",
+    image: urbanBuild,
   },
 ];
 

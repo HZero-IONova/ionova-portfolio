@@ -8,7 +8,8 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { motion } from "motion/react";
-import Link from "next/link";
+import Button from "@/components/Button";
+import ButtonDark from "@/components/ButtonDark";
 
 export const HeroSection = () => {
   return (
@@ -155,28 +156,9 @@ export const HeroSection = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           {/* Ghost button */}
-          <motion.a
-            href="#projects" // renderiza como enlace
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="inline-flex items-center gap-2 border border-tesla px-6 h-12 rounded-xl transition-colors duration-200 hover:bg-orbitSurface"
-          >
-            <span className="font-poppins font-semibold text-light">
-              Explore Our Work
-            </span>
-            <ArrowDown className="size-4" />
-          </motion.a>
+          <ButtonDark targetId="#projects" text="Explore our work" />
           {/* Primary CTA */}
-          <motion.button
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="inline-flex items-center gap-2 bg-light text-dark h-12 px-6 rounded-xl transition-colors duration-200 hover:bg-[#C2185B]"
-          >
-            <span className="text-lg">👋</span>
-            <span className="font-poppins font-semibold">Let’s Connect</span>
-          </motion.button>
+          <Button targetId="contact" text="Let's Connect" />
         </div>
       </div>
     </div>
