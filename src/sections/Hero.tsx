@@ -17,7 +17,7 @@ export const HeroSection = () => {
       id="home"
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip bg-deepSpace text-light"
     >
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{ backgroundImage: `url(${grainImage.src})` }}
@@ -158,7 +158,7 @@ export const HeroSection = () => {
           {/* Ghost button */}
           <ButtonDark targetId="#projects" text="Explore our work" />
           {/* Primary CTA */}
-          <Button targetId="contact" text="Let's Connect" />
+          <Button targetId="#contact" text="Let's Connect" />
         </div>
       </div>
     </div>

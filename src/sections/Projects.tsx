@@ -4,10 +4,11 @@ import harcePortfolio from "@/assets/images/Harce_Portfolio.png";
 import urbanBuild from "@/assets/images/UrbanBuild.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { motion } from "motion/react";
+
+import ButtonProjects from "@/components/ButtonProjects";
 
 const portfolioProjects = [
   {
@@ -23,7 +24,7 @@ const portfolioProjects = [
     image: harcePortfolio,
   },
   {
-    company: "UrbamBuild",
+    company: "UrbanBuild",
     year: "2025",
     title: "Landing Page",
     results: [
@@ -96,7 +97,13 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </motion.ul>
-                  <a
+                  <div className="mt-8 inline-flex items-center justify-center gap-2 h-12 px-6">
+                    <ButtonProjects
+                      text="Visit Live Site"
+                      targetId={project.link}
+                    />
+                  </div>
+                  {/* <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -110,7 +117,7 @@ export const ProjectsSection = () => {
                       <span>Visit Live Site</span>
                       <ArrowUpRightIcon className="size-4 text-primary" />
                     </motion.button>
-                  </a>
+                  </a> */}
                 </div>
 
                 {/* Project Image */}

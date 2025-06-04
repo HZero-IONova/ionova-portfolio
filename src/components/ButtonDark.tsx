@@ -34,9 +34,15 @@ const ButtonDark: React.FC<ButtonProps> = ({ text, targetId }) => {
   };
 
   const handleClick = () => {
-    const section = document.getElementById(targetId);
-    if (section) {
-      scrollToSection(section);
+    if (targetId.startsWith("http")) {
+      window.open(targetId, "_blank");
+    } else {
+      const section = document.getElementById(targetId.replace("#", ""));
+      if (section) {
+        scrollToSection(section);
+      } else {
+        console.warn(`No se encontró la sección con id: ${targetId}`);
+      }
     }
   };
 

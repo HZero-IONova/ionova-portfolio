@@ -1,46 +1,52 @@
 "use client";
 
+import { motion } from "framer-motion"; // ✅ corregido
 import ArrowUprightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
-import { motion } from "motion/react";
+import { Form } from "@/components/Form"; // ✅ asegúrate de que el path sea correcto
 
 export const ContactSection = () => {
   return (
-    <div id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
+    <section id="contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
         className="container"
       >
-        <div className="bg-gradient-to-r from-magenta to-accent text-dark py-10 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
+        {/* CTA superior */}
+        <div
+          className="bg-gradient-to-r from-magenta to-accent text-dark rounded-3xl relative overflow-hidden z-0 px-10 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-16"
+          style={{ minHeight: "380px" }}
+        >
+          {/* Grain texture */}
           <div
-            className="absolute inset-0 opacity-5 -z-10"
+            className="absolute inset-0 opacity-5 -z-10 rounded-3xl"
             style={{
               backgroundImage: `url(${grainImage.src})`,
+              backgroundRepeat: "repeat",
+              backgroundSize: "auto",
             }}
           ></div>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-            <div>
-              <h2 className="font-secondary text-2xl md:text-3xl">
-                Let's create something amazing together
-              </h2>
-              <p className="text-sm md:text-base mt-2">
-                Ready to bring your next project to life? Let's connect and
-                discuss how I can help you achieve your goals.
-              </p>
-            </div>
-            <div>
-              <a href="#projects">
-                <button className="text-light bg-dark/90 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
-                  <span className="font-semibold text-light">Contact Me</span>
-                  <ArrowUprightIcon className="size-4" />
-                </button>
-              </a>
-            </div>
+
+          {/* Texto + botón */}
+          <div className="w-full md:w-1/2 max-w-md text-center md:text-left flex flex-col gap-4">
+            <h2 className="font-secondary text-2xl md:text-3xl">
+              Let's create something amazing together
+            </h2>
+            <p className="text-sm md:text-base">
+              Ready to bring your next project to life? Let's connect and
+              discuss how I can help you achieve your goals.
+            </p>
+          </div>
+          {/* Formulario */}
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <Form />
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
+
+export default ContactSection;
