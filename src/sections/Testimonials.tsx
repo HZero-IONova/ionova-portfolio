@@ -2,6 +2,8 @@
 "use client";
 
 import memojiSmile from "@/assets/images/memoji-smile.png";
+import JLOropeza from "@/assets/images/JLOropeza.png";
+import KRuva from "@/assets/images/KRuvalcaba.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import grainImage from "@/assets/images/grain.jpg";
 import Image from "next/image";
@@ -14,21 +16,21 @@ import { fadeIn } from "@/components/variants";
 
 const testimonials = [
   {
-    name: "Hiram Arce",
-    position: "Software Engineer @ IONova",
-    text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiSmile,
+    name: "K. Ruvalcaba",
+    position: "Sales Manager @ PBH",
+    text: "Excellent Customer Service & Super Professional, great attention to detail.",
+    avatar: KRuva,
   },
   {
-    name: "Ramon Gonzalez",
-    position: "Software Engineer @ IONova",
-    text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiSmile,
+    name: "J. L. Oropeza",
+    position: "Business Owner @ VGCONINC",
+    text: "Working with Hiram was an outstanding experience. He understood our vision from the very beginning and transformed it into a functional and visually striking website. His strategic approach and commitment to quality exceeded our expectations.",
+    avatar: JLOropeza,
   },
   {
-    name: "Nene Arce",
-    position: "Software Engineer @ IONova",
-    text: "Hiram was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
+    name: "H. Arce",
+    position: "Software Engineer @ FreeLance",
+    text: "Hiram brought a level of creativity and precision that truly set our website apart. He not only delivered a beautiful design, but also ensured every element aligned with our goals. His work made a measurable impact on our online presence.",
     avatar: memojiSmile,
   },
 ];

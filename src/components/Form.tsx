@@ -3,6 +3,7 @@
 import { useState } from "react";
 import grainImage from "@/assets/images/grain.jpg";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 import ButtonForm from "@/components/ButtonForm";
 
@@ -24,15 +25,47 @@ export const Form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
     setSubmitted(true);
 
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ fullName: "", email: "", service: "", message: "" });
-    }, 3000);
+    try {
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          service: formData.service,
+          message: formData.message,
+        },
+        publicKey
+      );
+
+      console.log("Email successfully sent");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert(
+        "Something went wrong while sending your message. Please try again."
+      );
+    } finally {
+      console.log("Form submitted:", formData);
+
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          fullName: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      }, 3000);
+    }
   };
 
   return (
