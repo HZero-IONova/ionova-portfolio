@@ -3,12 +3,10 @@ import { twMerge } from "tailwind-merge";
 
 export const Header = () => {
   return (
-    <div className="flex justify-center items-center fixed top-3 w-full z-10">
+    <div className="flex justify-center items-center fixed top-4 w-full z-10 px-4 md:px-8">
       <nav
         className={twMerge(
-          "flex gap-1 p-0.5 rounded-full backdrop-blur",
-          // borde suave en texto muted, fondo semi-transparente oscuro
-          "border border-textMuted bg-light/10"
+          "flex w-full max-w-xl justify-between items-center px-8 py-2 rounded-full backdrop-blur border border-textMuted bg-light/10"
         )}
       >
         <a href="#home" className="nav-item">
