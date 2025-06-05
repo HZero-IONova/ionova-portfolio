@@ -39,7 +39,7 @@ export const ContactSection = () => {
               viewport={{ once: false, amount: 0.2 }}
               className="font-secondary text-2xl md:text-3xl"
             >
-              Let's create something amazing together
+              Let&apos;s create something amazing together
             </motion.h2>
             <motion.p
               variants={fadeIn("right", 0.2)}
@@ -48,7 +48,7 @@ export const ContactSection = () => {
               viewport={{ once: false, amount: 0.2 }}
               className="text-sm md:text-base"
             >
-              Ready to bring your next project to life? Let's connect and
+              Ready to bring your next project to life? Let&apos;s connect and
               discuss how I can help you achieve your goals.
             </motion.p>
           </div>
