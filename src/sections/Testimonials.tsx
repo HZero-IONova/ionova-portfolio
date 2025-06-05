@@ -17,7 +17,7 @@ import { fadeIn } from "@/components/variants";
 const testimonials = [
   {
     name: "K. Ruvalcaba",
-    position: "Sales Manager @ PBH",
+    position: "Lead Lawyer @ PBH",
     text: "Excellent Customer Service & Super Professional, great attention to detail.",
     avatar: KRuva,
   },
