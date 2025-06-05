@@ -144,7 +144,7 @@ export const HeroSection = () => {
             viewport={{ once: false, amount: 0.8 }}
             className="font-secondary text-3xl md:text-5xl text-center mt-8 tracking-wide text-light"
           >
-            Building Exceptional User Experiences
+            Engineering Web Experiences That Convert
           </motion.h1>
           <motion.p
             variants={fadeIn("up", 0.3)}
@@ -153,8 +153,8 @@ export const HeroSection = () => {
             viewport={{ once: false, amount: 0.8 }}
             className="mt-4 text-center text-light/70 md:text-lg"
           >
-            We specialize in transforming designs into functional,
-            high-performing web applications. Let’s discuss your next project.
+            Building high-performance, scalable web solutions designed to boost
+            engagement and convert visitors into customers.
           </motion.p>
         </div>
 

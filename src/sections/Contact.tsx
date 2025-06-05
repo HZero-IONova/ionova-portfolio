@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion"; // ✅ corregido
-import ArrowUprightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { Form } from "@/components/Form"; // ✅ asegúrate de que el path sea correcto
+
+import { fadeIn } from "@/components/variants";
 
 export const ContactSection = () => {
   return (
@@ -31,13 +32,25 @@ export const ContactSection = () => {
 
           {/* Texto + botón */}
           <div className="w-full md:w-1/2 max-w-md text-center md:text-left flex flex-col gap-4">
-            <h2 className="font-secondary text-2xl md:text-3xl">
+            <motion.h2
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.2 }}
+              className="font-secondary text-2xl md:text-3xl"
+            >
               Let's create something amazing together
-            </h2>
-            <p className="text-sm md:text-base">
+            </motion.h2>
+            <motion.p
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.2 }}
+              className="text-sm md:text-base"
+            >
               Ready to bring your next project to life? Let's connect and
               discuss how I can help you achieve your goals.
-            </p>
+            </motion.p>
           </div>
           {/* Formulario */}
           <div className="w-full md:w-1/2 flex justify-center items-center">
